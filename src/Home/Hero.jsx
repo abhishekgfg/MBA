@@ -1,5 +1,5 @@
 import React from "react";
-import heroBg from "../images/Hero.png"; // 👈 Agar image src/assets me hai
+import heroBg from "../images/hero.png"; // 👈 Agar image src/assets me hai
 
 export default function Hero() {
   return (
