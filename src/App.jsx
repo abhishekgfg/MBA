@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import CareerSupport from "./pages/CareerSupport";
 import ContactUs from "./pages/ContactUs";
-import Courses from "./pages/courses";
+import Courses from "./pages/Courses";
 
 export default function App() {
   return (
