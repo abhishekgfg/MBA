@@ -1,58 +1,62 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
-import heroBg from "../images/hero.png";
+import bgImage from "../images/cousehero.png"; // adjust path
 
-export default function Hero() {
+export default function ProgramSection() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <section
-      className="relative w-full h-[95vh] flex items-end justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url(${heroBg})` }}
+      className="relative w-full min-h-[70vh] flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Stronger Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/50 to-transparent"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-3xl px-6 pb-16">
-        <h1 className="text-3xl md:text-3xl font-bold leading-snug">
-          <span className="block">Transform Your Career with Dubai’s</span>
-          <span className="block">Leading Online Global Executive Program</span>
-        </h1>
-
-        <p className="mt-4 text-gray-200">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+      <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white leading-snug mb-6">
+          Explore Our Diverse and Career-Focused Online Global Executive Program
+          Specializations Designed for the Global Professional
+        </h2>
+        <p className="text-white/90 text-sm md:text-base mb-8">
+          Our Online MBA programs are designed for working professionals who seek
+          career growth, leadership roles, and global mobility. Choose from a
+          range of specialized tracks tailored to today’s most in-demand
+          industries — from Finance and Marketing to Digital Transformation and
+          Business Analytics. Each program offers academic excellence, practical
+          insights, and flexible learning — accessible anytime, anywhere.
         </p>
 
-        <div className="mt-8 flex justify-center space-x-4">
-          <button className="bg-[#d4af37] text-black px-6 py-3 rounded font-semibold hover:opacity-90">
+        {/* Buttons */}
+        <div className="flex justify-center gap-4">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-md font-medium transition">
             Explore
           </button>
           <button
             onClick={() => setShowModal(true)}
-            className="border border-white px-6 py-3 rounded font-semibold hover:bg-white hover:text-black"
+            className="border border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-md font-medium transition"
           >
             Download Brochure
           </button>
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Brochure Form Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-          <div className="bg-white rounded-lg shadow-xl w-full max-w-md p-6 relative">
-            {/* Close button */}
+          <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative">
+            {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-gray-600"
+              className="absolute top-4 right-4 text-gray-600 hover:text-black"
             >
               <X size={24} />
             </button>
 
             <h2 className="text-2xl font-semibold mb-2">Request Program Brochure</h2>
             <p className="text-gray-500 mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              Fill out the form below to get the brochure instantly.
             </p>
 
             <form className="space-y-4">
@@ -91,7 +95,7 @@ export default function Hero() {
 
               <button
                 type="submit"
-                className="w-full bg-[#d4af37] text-black py-3 rounded font-semibold"
+                className="w-full bg-yellow-600 hover:bg-yellow-700 text-white py-3 rounded font-semibold"
               >
                 Download Brochure
               </button>
