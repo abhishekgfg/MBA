@@ -5,7 +5,7 @@ import ProgramBrochureSection from "../Global_Executive/ProgramBrochureSection.j
 import ProgramOverview from "../Global_Executive/ProgramOverview.jsx";
 import CareerOutcomes from "../Global_Executive/CareerOutcomes.jsx";
 import Testimonials from "../Global_Executive/Testimonials.jsx";
-import ProgramFAQ from "../Global_Executive/ProgramFaq.jsx";
+import ProgramFAQ from "../Global_Executive/ProgramFAQ.jsx";
 
 
 
