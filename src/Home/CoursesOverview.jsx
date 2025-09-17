@@ -23,7 +23,7 @@ export default function CoursesOverview() {
   ];
 
   return (
-    <section className="relative py-16 bg-white">
+    <section className="relative py-5 bg-white">
       {/* Background Left Design */}
       
 

@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../images/eagles.png"
 
 export default function Benefits() {
   const benefits = [
@@ -29,7 +30,7 @@ export default function Benefits() {
         {/* Logo */}
        <div className="flex justify-center mb-4">
   <img
-    src="/src/images/eagles.png" // ✅ Correct path from public folder
+    src={logo} // ✅ Correct path from public folder
     alt="Logo"
     className="w-16 h-16 object-contain opacity-100 brightness-100 contrast-100"
     style={{ filter: "none" }} // 🔥 Ensure no filter affects it

@@ -3,10 +3,11 @@ import { Menu, X } from "lucide-react";
 import logo from "../images/eagle.png";
 import StudentLoginModal from "./StudentLoginModal";
 import PartnerLoginModal from "./PartnerLoginModal";
+import ApplyNowModal from "./ApplyNowModal"; // ⬅️ NEW IMPORT
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showModal, setShowModal] = useState(null); // "apply", "enquire", "login", "partner"
+  const [showModal, setShowModal] = useState(null);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const openModal = (type) => setShowModal(type);
@@ -38,7 +39,26 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8">
           <a href="/" className="hover:text-[#d4af37]">Home</a>
-          <a href="/courses" className="hover:text-[#d4af37]">Courses</a>
+
+          {/* Courses with hover submenu */}
+          <div className="relative group">
+            <a href="/courses" className="hover:text-[#d4af37] flex items-center">
+              Courses
+            </a>
+            {/* Submenu */}
+            <div className="absolute left-0 top-full hidden group-hover:block bg-[#111] shadow-lg rounded-md py-2 w-48 z-50">
+              <a href="/global_executive" className="block px-4 py-2 text-sm text-gray-300 hover:text-[#d4af37]">
+                Global Executive MBA
+              </a>
+              <a href="/courses/leadership" className="block px-4 py-2 text-sm text-gray-300 hover:text-[#d4af37]">
+                Leadership Training
+              </a>
+              <a href="/courses/digital-marketing" className="block px-4 py-2 text-sm text-gray-300 hover:text-[#d4af37]">
+                Digital Marketing
+              </a>
+            </div>
+          </div>
+
           <a href="/about" className="hover:text-[#d4af37]">About Us</a>
           <a href="/career" className="hover:text-[#d4af37]">Career Support</a>
           <a href="/contact-us" className="hover:text-[#d4af37]">Contact Us</a>
@@ -129,47 +149,9 @@ export default function Header() {
       {showModal === "partner" && (
         <PartnerLoginModal isOpen={true} onClose={closeModal} />
       )}
-      {/* Apply Modal */}
       {showModal === "apply" && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full p-6 relative">
-            <button
-              className="absolute top-4 right-4 text-gray-600"
-              onClick={closeModal}
-            >
-              <X size={24} />
-            </button>
-            <h2 className="text-2xl font-semibold mb-2">Apply Now</h2>
-            <p className="text-gray-500 mb-6">Please fill the form below to apply.</p>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="text" placeholder="Full Name" className="border p-2 rounded" />
-              <input type="email" placeholder="Email Address" className="border p-2 rounded" />
-              <input type="text" placeholder="+91 Phone Number" className="border p-2 rounded" />
-              <input type="date" placeholder="Date of Birth" className="border p-2 rounded" />
-              <select className="border p-2 rounded">
-                <option>Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-              <input type="text" placeholder="Country" className="border p-2 rounded" />
-              <select className="border p-2 rounded">
-                <option>Program of Interest</option>
-              </select>
-              <select className="border p-2 rounded">
-                <option>Highest Qualification</option>
-              </select>
-              <div className="col-span-2 flex items-center space-x-2">
-                <input type="checkbox" />
-                <label>I agree to receive information via email and phone.</label>
-              </div>
-              <button type="submit" className="col-span-2 bg-[#d4af37] text-black py-3 rounded font-semibold">
-                Enquire Now
-              </button>
-            </form>
-          </div>
-        </div>
+        <ApplyNowModal isOpen={true} onClose={closeModal} /> 
       )}
-      {/* Enquire Modal */}
       {showModal === "enquire" && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
           <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full p-6 relative">

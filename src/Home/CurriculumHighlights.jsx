@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CurriculumHighlights() {
   return (
-    <section className="py-12 md:py-14 bg-white relative">
+    <section className="py-5 md:py-14 bg-white relative">
       {/* Top Content */}
       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
         {/* Top Icon */}

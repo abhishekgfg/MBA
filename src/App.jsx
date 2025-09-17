@@ -7,6 +7,8 @@ import AboutPage from "./pages/AboutPage";
 import CareerSupport from "./pages/CareerSupport";
 import ContactUs from "./pages/ContactUs";
 import Courses from "./pages/Courses";
+import Global_Courses from "./pages/Global_Courses";
+import Global_ExecutivePage from "./pages/Global_ExecutivePage";
 
 export default function App() {
   return (
@@ -18,6 +20,9 @@ export default function App() {
          <Route path="/career" element={<CareerSupport/>} />
          <Route path="/contact-us" element={<ContactUs/>}  />
          <Route path="/courses" element={<Courses/>} />
+          <Route path="/global_executive" element={<Global_ExecutivePage/>} />
+          <Route path= "/global_Courses" element={<Global_Courses/>} />
+         
           </Routes>
        
         <Footer />

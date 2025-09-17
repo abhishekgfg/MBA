@@ -2,6 +2,7 @@ import React from "react";
 import blog1 from "../images/blog1.png"; // Ensure correct file extension
 import blog2 from "../images/blog2.png";
 import blog3 from "../images/blog3.png";
+import logo from "../images/burj-khalifa.png"
 
 export default function BlogSection() {
   const blogs = [
@@ -23,10 +24,10 @@ export default function BlogSection() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className=" bg-white">
       {/* Top Content */}
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <img src="\src\images\burj-al-arab.png" alt="icon" className="mx-auto w-12 h-12 mb-4" />
+        <img src={logo} alt="icon" className="mx-auto w-12 h-12 mb-4" />
         <h2 className="text-3xl font-bold mb-2">Latest from our blog</h2>
         <p className="text-gray-600">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
